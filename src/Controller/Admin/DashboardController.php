@@ -61,7 +61,16 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToCrud('Catégories', 'fas fa-list', Category::class)
         ]);
 
-        yield MenuItem::subMenu('Menus', 'fas fa-list')->setSubItems([]);
+        yield MenuItem::subMenu('Menus', 'fas fa-list')->setSubItems([
+            MenuItem::linkToCrud('Pages', 'fas fa-file', Menu::class),
+            MenuItem::linkToCrud('Articles', 'fas fa-newspaper', Menu::class),
+            MenuItem::linkToCrud('Liens personnalisés', 'fas fa-link', Menu::class),
+            MenuItem::linkToCrud('Catégories', 'fab fa-delicious', Menu::class),
+
+            // Arrêt à 3:25 épisode 07
+
+
+        ]);
 
         yield MenuItem::linkToCrud('Commentaires', 'fas fa-comment', Comment::class);
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
